@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     get :me, to: 'me#me'
   end
 
+  resources :people
+
   root to: "main#index"
 end
