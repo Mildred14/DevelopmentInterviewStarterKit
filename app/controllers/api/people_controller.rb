@@ -1,12 +1,13 @@
-class PeopleController < ApplicationController
+class Api::PeopleController < ApplicationController
   def index
-    @people = Salesloft::Client.people['data'].map do |person|
-      [{
+    people = Salesloft::Client.people['data'].map do |person|
+      {
         id: person['id'],
         name: person['first_name'],
         email: person['email_address'],
         job: person['title'],
-      }]
+      }
     end
+    render json: people
   end
 end
