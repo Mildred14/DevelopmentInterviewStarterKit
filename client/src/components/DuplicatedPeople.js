@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const Table = styled.table`
+const Table = styled.table.attrs({
+  id: 'duplicated-people',
+})`
   border-collapse: collapse;
 `
 
@@ -12,7 +14,7 @@ const TableData = styled.td`
 `
 
 const TableHead = styled.th.attrs({
-  colSpan: "2"
+  colSpan: "2",
 })`
   border: 1px solid #232E21;
   background-color: #88A2AA;
@@ -25,8 +27,8 @@ const DuplicatedPeople = ({ duplicated }) => {
   const duplicatedData = listOfDuplicated.map(value => {
     return (
       <tr key={value[1]}>
-        <TableData>{value[0]}</TableData>
         <TableData>{value[1]}</TableData>
+        <TableData>{value[0]}</TableData>
       </tr>
     )
   })

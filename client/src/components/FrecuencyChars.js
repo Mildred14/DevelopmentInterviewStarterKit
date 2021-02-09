@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Table = styled.table`
+const Table = styled.table.attrs({
+  id: 'frecuency-chars'
+})`
   border-collapse: collapse;
 `
 
@@ -22,7 +24,7 @@ const FrecuencyChars = ({ chars }) => {
 
   const charsData = listOfChars.map(value => {
     return (
-      <tr key={value[0]}>
+      <tr id={value[0]} key={value[0]}>
         <TableData>{value[0]}</TableData>
         <TableData>{value[1]}</TableData>
       </tr>

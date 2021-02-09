@@ -23,7 +23,10 @@ const Button = styled.button`
     outline: #88A2AA;
   }
 `
-const Table = styled.table`
+
+const Table = styled.table.attrs({
+  id: 'people-list'
+})`
   border-collapse: collapse;
   margin: auto;
 `
@@ -41,6 +44,7 @@ const TableHead = styled.th`
 const Title = styled.h1`
   text-align: center;
 `
+
 const PeopleWrapper = styled.div`
   display: flex;
   flex-direction: row;
