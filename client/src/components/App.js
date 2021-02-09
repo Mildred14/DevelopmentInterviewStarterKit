@@ -23,10 +23,7 @@ const App = ({ store }) => (
   <Provider store={store}>
     <ThemeProvider theme={theme}>
       <Router>
-        <div>
-          {/* <Route exact path="/" component={LandingPage}/> */}
-          <Route exact path="/" component={People}/>
-        </div>
+        <Route exact path="/" component={People}/>
       </Router>
     </ThemeProvider>
   </Provider>
